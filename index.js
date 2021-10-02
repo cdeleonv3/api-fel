@@ -18,6 +18,16 @@ app.get("/fel/persona", async(req, res) =>{
     }
 })
 
+//getAll
+app.get("/", async(req, res) =>{
+    try{
+        console.log(("Conexion"));
+
+    }catch (err) {
+        console.error(err.message);
+    }
+})
+
 app.listen(5000, () => {
     console.log(("Servidor iniciado en puerto 5000"));
 })
