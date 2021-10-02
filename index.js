@@ -17,6 +17,24 @@ app.get("/fel/persona", async(req, res) =>{
     }
 })
 
+//prueba
+app.get("/api/client", (req, res) => {
+    pool.getConnection((err, conn) => {
+        if (err) throw err;
+            conn.query("SELECT * FROM CXC_PERSONA",
+                (error, results, fields) => {
+                    conn.release();
+
+                    if (error) throw error;
+
+                    res.send(results);
+                }
+        )
+    })
+})
+
+
+
 //getAll
 app.get("/", async(req, res) =>{
     try{
