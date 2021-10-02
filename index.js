@@ -1,11 +1,10 @@
 const express = require('express');
-const app = express();
-const cors = require("cors");
+const bodyParser = require('body-parser');
 const pool = require("./db");
 
 //middleware
-app.use(cors());
-app.use(express.json());
+const app = express();
+app.use(bodyParser.json());
 
 //getAll
 app.get("/fel/persona", async(req, res) =>{
